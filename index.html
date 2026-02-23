@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Tracker - Complete Solution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .transition-all { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <h1 class="text-3xl font-bold text-[#0f2d52] mb-8">Job Application Tracker</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <p class="text-gray-500 font-medium text-sm">Total</p>
+                <h2 id="total-stat" class="text-4xl font-bold text-green-600 mt-2">0</h2>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <p class="text-gray-500 font-medium text-sm">Interview</p>
+                <h2 id="interview-stat" class="text-4xl font-bold text-blue-600 mt-2">0</h2>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                <p class="text-gray-500 font-medium text-sm">Rejected</p>
+                <h2 id="rejected-stat" class="text-4xl font-bold text-red-500 mt-2">0</h2>
+            </div>
+        </div>
+        <hr>
+
+        <br>
+        <br>
+
+        <div class=" p-1">
+            <div class="bg-white p-4 flex justify-between items-center border-b border-gray-100">
+                <h3 class="text-xl font-bold text-[#0f2d52]">Available Jobs</h3>
+                <span id="tab-count-label" class="text-gray-500 font-medium">0 jobs</span>
+            </div>
+
+            <div class="bg-white p-4 flex flex-wrap gap-2">
+                <button onclick="switchTab('all')" id="tab-btn-all" class="px-6 py-2 bg-blue-600 text-white rounded-md text-sm font-medium transition-all">All</button>
+                <button onclick="switchTab('interview')" id="tab-btn-interview" class="px-6 py-2 bg-white text-gray-600 border border-gray-200 rounded-md text-sm font-medium transition-all">Interview</button>
+                <button onclick="switchTab('rejected')" id="tab-btn-rejected" class="px-6 py-2 bg-white text-gray-600 border border-gray-200 rounded-md text-sm font-medium transition-all">Rejected</button>
+            </div>
+
+            <div id="job-container" class="bg-white rounded-lg border border-gray-200 min-h-[400px]">
+                </div>
+        </div>
+    </div>
+
+  <script src="jobs.js"></script>
+
+</body>
+</html>
