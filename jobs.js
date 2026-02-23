@@ -38,8 +38,8 @@
 
 
             document.getElementById('total-stat').innerText = jobs.length;
-            document.getElementById('interview-stat').innerText = jobs.filter(j => j.status === 'interview').length;
-            document.getElementById('rejected-stat').innerText = jobs.filter(j => j.status === 'rejected').length;
+            document.getElementById('interview-stat').innerText = jobs.filter(i => i.status === 'interview').length;
+            document.getElementById('rejected-stat').innerText = jobs.filter(i => i.status === 'rejected').length;
 
            
 
@@ -118,7 +118,7 @@
 
 
         function changeStatus(id, newStatus) {
-            const jobIndex = jobs.findIndex(j => j.id === id);
+            const jobIndex = jobs.findIndex(i => i.id === id);
          
 
 
@@ -129,7 +129,7 @@
 
         function deleteJob(id) {
             if (confirm('Are you sure you want to delete this job application?')) {
-                jobs = jobs.filter(j => j.id !== id);
+                jobs = jobs.filter(i => i.id !== id);
                 renderJobs();
             }
         }
