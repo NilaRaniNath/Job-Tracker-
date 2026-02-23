@@ -68,7 +68,7 @@
             container.innerHTML = filteredJobs.map(job => `
                 <div class="p-6 border-b border-gray-100 relative group animate-fade-in">
                     <button onclick="deleteJob(${job.id})" class="absolute top-6 right-6 text-gray-300 hover:text-red-500 transition-colors p-2 bg-gray-50 rounded-full" title="Delete Application">
-                        <i class="fa-solid fa-trash-can"></i>
+                          <p>Delete</p>
                     </button>
                     
                     <h4 class="text-xl font-bold text-[#0f2d52]">${job.company}</h4>
@@ -128,10 +128,8 @@
 
 
         function deleteJob(id) {
-            if (confirm('Are you sure you want to delete this job application?')) {
-                jobs = jobs.filter(i => i.id !== id);
-                renderJobs();
-            }
+             if(jobs =jobs.filter(i=> i.id !==id));
+            renderJobs();
         }
 
     
