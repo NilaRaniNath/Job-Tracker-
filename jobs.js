@@ -26,22 +26,23 @@
                 if (currentTab === 'all') return true;
                 return i.status === currentTab;
             });
-
-
+            // console.log(filteredJobs)
+          
+        
 
 
 
 
 
             document.getElementById('tablists').innerText = `${filteredJobs.length} jobs`;
-            
-          
-
-
-
-
+        
+    
             document.getElementById('total').innerText = jobs.length;
+
+
             document.getElementById('interview').innerText = jobs.filter(i => i.status === 'interview').length;
+
+
             document.getElementById('rejected').innerText = jobs.filter(i => i.status === 'rejected').length;
 
            
@@ -86,7 +87,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <span class="inline-block px-3 py-1 ${getStatusStyle(job.status)} text-[10px] font-bold rounded uppercase">
+                        <span class="inline-block px-3 py-1 ${getStatusStyle(job.status)} text-xs text-purple-800 rounded uppercase">
                             ${job.status === 'all' ? 'Not Applied' : job.status}
                         </span>
                     </div>
@@ -111,13 +112,7 @@
             `).join('');
         }
 
-        function getStatusStyle(status) 
-    
-        {
-            if (status === 'interview') return 'bg-green-50 text-green-600';
-            if (status === 'rejected') return 'bg-red-50 text-red-600';
-            return 'bg-blue-50 text-blue-600';
-        }
+      
 
        
 
@@ -140,7 +135,24 @@
     renderJobs();
 }
 
+
+
+
+
+      function getStatusStyle(status) 
     
+        {
+            if (status === 'interview') return 'bg-green-50 text-green-600';
+            if (status === 'rejected') return 'bg-red-50 text-red-600';
+            return 'bg-blue-50 text-blue-600';
+        }
+
+
+
+
+
+
+
         function clickTab(tab) {
             currentTab = tab;
             const tabs = ['all', 'interview', 'rejected'];
