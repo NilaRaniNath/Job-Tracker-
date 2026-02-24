@@ -1,5 +1,5 @@
  1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
-Ans: In JavaScript, getElementById, getElementsByClassName, querySelector, and querySelectorAll are methods used to select HTML elements from a webpage. The method getElementById() is used to select a single element by its unique ID. Since an ID is always different for each element, this method always returns only one element. 
+Ans: In JavaScript,getElementById,getElementsByClassName,querySelector and querySelectorAll are methods used to select HTML elements from a webpage. The method getElementById() is used to select a single element by its unique ID. Since an ID is always different for each element, this method always returns only one element. 
 
 The method getElementsByClassName() is used to select all elements that have the same class name. It can return multiple elements at the same time. The result is an HTMLCollection, and you need to access elements using an index number, such as [0], [1], and so on.
 
@@ -29,7 +29,7 @@ For example, if a button is inside a div and the button is clicked, the event fi
 
 
 4. What is Event Delegation in JavaScript? Why is it useful?
-Ans:Event Delegation means handling child element events using a parent element. The parent element listens for events that occur on its child elements. When an event happens, it is captured using eveent bubbling and the parent elements checks which chlid element triggered the event by using event.target.
+Ans:Event Delegation means handling child element events using a parent element. The parent element listens for events that occur on its child elements. When an event happens, it is captured using event bubbling and the parent elements checks which chlid element triggered the event by using event.target.
 
 
 Event Delelgation is useful because it reduces memory usage,improves performance.  It is especially helpful when elements can be added dynamically, as new elements can be handled without adding new event listeners.
@@ -38,7 +38,7 @@ Event Delelgation is useful because it reduces memory usage,improves performance
 
 
 5. What is the difference between preventDefault() and stopPropagation() methods?
-Ans: preventDefault() : The  preventDefault() method is used to stop the default action of an element. Many HTML elements have their own bulit-in behavior. If  preventDefault() is used ,these default actions will not happen.
+Ans: preventDefault() : The  preventDefault() method is used to stop the default action of an element. Many HTML elements have their own built-in behavior. If  preventDefault() is used ,these default actions will not happen.
 
 stopPropagation() : The stopPropagation()  method is used to stop the event from moving to parent elements. Normally, an event goes from the target element to its parent elements through event bubbling. When stopPropagation()  is used, the event stops at that element and does not go upward.
 
