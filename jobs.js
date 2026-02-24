@@ -1,14 +1,14 @@
 
      
         let jobs = [
-            { id: 1, company: "Mobile First Corp", pos: "React Native Developer", loc: "Remote", type: "Full-time", sal: "$130,000 - $175,000", desc: "Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.", status: 'all' },
-            { id: 2, company: "WebFlow Agency", pos: "Web Designer & Developer", loc: "Los Angeles, CA", type: "Part-time", sal: "$80,000 - $120,000", desc: "Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design.", status: 'all' }, 
-            { id: 3, company: "DataViz Solutions", pos: "Data Visualization Specialist", loc: "Boston, MA", type: "Full-time", sal: "$125,000 - $165,000", desc: "Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.", status: 'all' },
-             { id: 4, company: "CloudFirst Inc", pos: "Backend Developer", loc: "Boston, MA", type: "Full-time", sal: "$125,000 - $165,000", desc: "Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.", status: 'all' },
-              { id: 5, company: "Innovation Labs", pos: "UI/UX Engineer", loc: "Austin, TX", type: "Full-time", sal: "$110,000 - $150,000", desc: "Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.", status: 'all' },
-        { id: 6, company: "MegaCorp Solutions", pos: "JavaScript Developer", loc: "New York, NY", type: "Full-time", sal: "$130,000 - $170,000", desc: "Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.", status: 'all' },
-        { id: 7, company: "StartupXYZ", pos: "Full Stack Engineer", loc: "Remote", type: "Full-time", sal: "$120,000 - $160,000", desc: "Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.", status: 'all' }, 
-           { id: 8, company: "TechCorp Industries", pos: "Senior Frontend Developer", loc: "San Francisco, CA", type: "Full-time", sal: "$130,000 - $175,000", desc: "We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.", status: 'all' },  
+            { id: 1, company: "Mobile First Corp", position: "React Native Developer", location: "Remote", type: "Full-time", sal: "$130,000 - $175,000", desc: "Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.", status: 'all' },
+            { id: 2, company: "WebFlow Agency", position: "Web Designer & Developer", location: "Los Angeles, CA", type: "Part-time", sal: "$80,000 - $120,000", desc: "Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design.", status: 'all' }, 
+            { id: 3, company: "DataViz Solutions", position: "Data Visualization Specialist", location: "Boston, MA", type: "Full-time", sal: "$125,000 - $165,000", desc: "Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.", status: 'all' },
+             { id: 4, company: "CloudFirst Inc", position: "Backend Developer", location: "Boston, MA", type: "Full-time", sal: "$125,000 - $165,000", desc: "Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.", status: 'all' },
+              { id: 5, company: "Innovation Labs", position: "UI/UX Engineer", location: "Austin, TX", type: "Full-time", sal: "$110,000 - $150,000", desc: "Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.", status: 'all' },
+        { id: 6, company: "MegaCorp Solutions", position: "JavaScript Developer", location: "New York, NY", type: "Full-time", sal: "$130,000 - $170,000", desc: "Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.", status: 'all' },
+        { id: 7, company: "StartupXYZ", position: "Full Stack Engineer", location: "Remote", type: "Full-time", sal: "$120,000 - $160,000", desc: "Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.", status: 'all' }, 
+           { id: 8, company: "TechCorp Industries", position: "Senior Frontend Developer", location: "San Francisco, CA", type: "Full-time", sal: "$130,000 - $175,000", desc: "We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.", status: 'all' },  
 
         ];
 
@@ -33,16 +33,16 @@
 
 
 
-            document.getElementById('tab-count-label').innerText = `${filteredJobs.length} jobs`;
+            document.getElementById('tablists').innerText = `${filteredJobs.length} jobs`;
             
           
 
 
 
 
-            document.getElementById('total-stat').innerText = jobs.length;
-            document.getElementById('interview-stat').innerText = jobs.filter(i => i.status === 'interview').length;
-            document.getElementById('rejected-stat').innerText = jobs.filter(i => i.status === 'rejected').length;
+            document.getElementById('total').innerText = jobs.length;
+            document.getElementById('interview').innerText = jobs.filter(i => i.status === 'interview').length;
+            document.getElementById('rejected').innerText = jobs.filter(i => i.status === 'rejected').length;
 
            
 
@@ -74,11 +74,11 @@
                           <p>Delete</p>
                     </button>
                     
-                    <h4 class="text-xl font-bold text-[#0f2d52]">${job.company}</h4>
-                    <p class="text-gray-500 mt-1">${job.pos}</p>
+                    <h4 class="text-xl font-bold text-green-500">${job.company}</h4>
+                    <p class="text-gray-500 mt-1">${job.position}</p>
                     
-                    <div class="flex flex-wrap gap-x-4 gap-y-1 mt-4 text-sm text-gray-400 font-medium">
-                        <span>${job.loc}</span>
+                    <div class="flex gap-x-2 gap-y-1 mt-4 text-sm text-red-400 font-medium">
+                        <span>${job.location}</span>
                         <span>•</span>
                         <span>${job.type}</span>
                         <span>•</span>
@@ -86,24 +86,24 @@
                     </div>
 
                     <div class="mt-4">
-                        <span class="inline-block px-3 py-1 ${getStatusStyle(job.status)} text-[10px] font-bold rounded uppercase tracking-wider">
+                        <span class="inline-block px-3 py-1 ${getStatusStyle(job.status)} text-[10px] font-bold rounded uppercase">
                             ${job.status === 'all' ? 'Not Applied' : job.status}
                         </span>
                     </div>
 
-                    <p class="mt-4 text-gray-600 text-sm leading-relaxed max-w-3xl">
+                    <p class="mt-4 text-gray-900 text-sm  max-w-3xl">
                         ${job.desc}
                     </p>
 
                     <div class="mt-6 flex gap-3">
                         <button onclick="changeStatus(${job.id}, 'interview')" 
-                            class="px-5 py-2 border transition-all rounded font-bold text-xs uppercase tracking-tight
-                            ${job.status === 'interview' ? 'bg-green-600 border-green-600 text-white' : 'border-green-500 text-green-600 hover:bg-green-50'}">
+                            class="px-5 py-2 border transition-all rounded font-bold text-xs uppercase
+                            ${job.status === 'interview' ? 'bg-green-600 border-green-600 text-white' : 'border-green-500 text-green-900 hover:bg-green-500'}">
                             Interview
                         </button>
                         <button onclick="changeStatus(${job.id}, 'rejected')" 
-                            class="px-5 py-2 border transition-all rounded font-bold text-xs uppercase tracking-tight
-                            ${job.status === 'rejected' ? 'bg-red-500 border-red-500 text-white' : 'border-red-400 text-red-500 hover:bg-red-50'}">
+                            class="px-5 py-2 border transition-all rounded font-bold text-xs uppercase 
+                            ${job.status === 'rejected' ? 'bg-red-500 border-red-500 text-white' : 'border-red-400 text-red-900 hover:bg-red-500'}">
                             Rejected
                         </button>
                     </div>
@@ -111,7 +111,9 @@
             `).join('');
         }
 
-        function getStatusStyle(status) {
+        function getStatusStyle(status) 
+    
+        {
             if (status === 'interview') return 'bg-green-50 text-green-600';
             if (status === 'rejected') return 'bg-red-50 text-red-600';
             return 'bg-blue-50 text-blue-600';
@@ -121,7 +123,7 @@
 
 
         function changeStatus(id, newStatus) {
-            const jobIndex = jobs.findIndex(i => i.id === id);
+            const jobIndex = jobs.findIndex(item => item.id === id);
          
 
 
@@ -130,19 +132,22 @@
         }
 
 
+      
         function deleteJob(id) {
-             if(jobs =jobs.filter(i=> i.id !==id));
-            renderJobs();
-        }
+
+    //  console.log(id);       
+    jobs = jobs.filter(i => i.id !== id); 
+    renderJobs();
+}
 
     
-        function switchTab(tab) {
+        function clickTab(tab) {
             currentTab = tab;
             const tabs = ['all', 'interview', 'rejected'];
             
-            tabs.forEach(t => {
-                const btn = document.getElementById(`tab-btn-${t}`);
-                if (t === tab) {
+            tabs.forEach(i => {
+                const btn = document.getElementById(`tab-btn-${i}`);
+                if (i === tab) {
                     btn.classList.replace('bg-white', 'bg-blue-600');
                     btn.classList.replace('text-gray-600', 'text-white');
                 } else {
